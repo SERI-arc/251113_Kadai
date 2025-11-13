@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>KADAI1</title>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/vuetify@3.6.11/dist/vuetify.min.css'>
+<link rel='stylesheet' href='https://unpkg.com/@mdi/font@6.x/css/materialdesignicons.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'><link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  </head>
+  <body>
+   <div id="app">
+   <div class="container">
+     <h1 class="title">国情報検索App</h1>
+   </div>
+ <v-container>
+  <v-row align="center" justify="center">
+   <v-col cols=6>
+    <v-select :items= "countrylist" label="国を選択してください" v-model="countries">　
+    </v-select>
+   </v-col>
+   <v-col cols=2>
+     <v-btn 
+            class="ml-3"
+            size="large"
+            rounded="pill"
+            @click="searchCountry"
+            >
+       <v-icon icon="mdi-magnify" class="mr-1"></v-icon>
+            検索
+     </v-btn>
+   </v-col>
+  </v-row>
+ <v-row >
+   <v-row align="center" justify="center">
+   <v-col cols =auto>
+     <v-img v-bind:src="flag " width="300" height="200" class="flag"></v-img>
+   </v-col>
+  </v-row>
+   <v-col cols=6>
+   <v-row>
+    <v-col cols =12>
+     <p>国名：{{nation}}</p>
+    </v-col>
+    <v-col cols =12>
+<!--    <p>首都：<span v-for ="capital in capitallists1">{{capital}}</span></p> -->
+     <p>首都：{{capitallists}}</p> 
+    </v-col>
+    <v-col cols =12>
+           <p>人口：{{population}}<span class="population" v-if="population" >人</span></p>
+    </v-col>
+ <!--    <v-col cpls =12><p>天気:{{weather}}</p> 
+     <v-btn @click="getweather">取得</v-btn></v-col>-->
+   </v-row>
+ </v-col> 
+   </v-col>
+ </v-row> 
+
+<div ref="mapContainer" class="map-container"></div>
+</v-container>
+</div>
+
+  </body>
+</html>
+    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+<script src='https://unpkg.com/vue-router@4/dist/vue-router.global.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vuetify@3.6.11/dist/vuetify.min.js'></script>
+<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyA6Gw7d_K62UTEoWYi10Z5Xgl6Y6z8HQn0&amp;callback=initMap'></script><script  src="./script.js"></script>
+
+  </body>
+  
+</html>
